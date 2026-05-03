@@ -26,8 +26,8 @@ export function OpenSourceSkillCalloutBanner({
           </p>
           <p className="text-sm text-[var(--color-text-secondary)] leading-relaxed">
             <span className="text-foreground">funnel_audit</span> ships on a
-            public MIT repo so you can read the full skill before paying. the
-            other 23 are part of the bundle.
+            public MIT repo so you can read the full skill before paying. every
+            other skill is part of the library.
           </p>
         </div>
         <Link

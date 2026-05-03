@@ -159,19 +159,19 @@ export function SkillDetailPageRenderer({ skill }: { skill: Skill }) {
           <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-8 flex-wrap">
             <div className="flex-1">
               <p className="font-mono-ui text-xs text-[var(--color-text-tertiary)] mb-2">
-                THE BUNDLE — BEST MATH
+                THE LIBRARY — BEST MATH
               </p>
               <p className="font-display text-5xl sm:text-6xl font-light">$99</p>
               <p className="text-sm text-[var(--color-text-secondary)] mt-3 max-w-md">
-                this skill + 23 more. break-even at six. one klaviyo flow rebuild
-                at agency rates pays for the whole bundle.
+                this skill + every other skill in the catalog. break-even at six.
+                one klaviyo flow rebuild at agency rates pays for the whole library.
               </p>
             </div>
             <Link
               href={BUNDLE_HREF}
               className="btn-primary font-mono-ui text-sm px-8 py-4 inline-block text-center w-full sm:w-auto"
             >
-              GET ALL 24 — $99
+              GET THE LIBRARY — $99
             </Link>
           </div>
 
@@ -181,7 +181,7 @@ export function SkillDetailPageRenderer({ skill }: { skill: Skill }) {
                 JUST THIS SKILL
               </p>
               <p className="text-sm text-[var(--color-text-secondary)]">
-                one file, $19. you can always upgrade to the bundle later.
+                one file, $19. you can always upgrade to the library later.
               </p>
             </div>
             <AddToCartActionButton

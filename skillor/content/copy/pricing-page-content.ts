@@ -10,7 +10,7 @@ export const pricingContent = {
   hero: {
     heading: "two prices. no subscription.",
     subheading:
-      "one klaviyo rebuild at agency rates: $300–500. one funnel audit deck: $1,500. one skill is $19. the bundle is $99.",
+      "one klaviyo rebuild at agency rates: $300–500. one funnel audit deck: $1,500. one skill is $19. the library is $99.",
   },
 
   // FOUNDER: REPLACE WITH REAL BETA QUOTES WHEN AVAILABLE (week 2-3).

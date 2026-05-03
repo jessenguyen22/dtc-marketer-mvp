@@ -2,13 +2,17 @@ import Link from "next/link";
 import { getAllSkills } from "@/lib/skills-catalog-loader";
 import { SkillsCatalogFilterAndSortPanel } from "@/components/skills/skills-catalog-filter-and-sort-panel";
 
-export const metadata = {
-  title: "skills — skillor",
-  description: "all 24 dtc marketing skills. $19 each, $99 for the bundle.",
-};
+export async function generateMetadata() {
+  const count = getAllSkills().length;
+  return {
+    title: "skills — skillor",
+    description: `${count} dtc marketing skills. $19 each, $99 for the full library.`,
+  };
+}
 
 export default function SkillsCatalogPage() {
   const skills = getAllSkills();
+  const count = skills.length;
 
   return (
     <>
@@ -18,18 +22,19 @@ export default function SkillsCatalogPage() {
             className="font-display font-light tracking-tight"
             style={{ fontSize: "clamp(34px, 8vw, 120px)", lineHeight: 1.05 }}
           >
-            24 skills.
+            {count} skills.
           </h1>
           <p className="mt-8 text-lg sm:text-xl text-[var(--color-text-secondary)] max-w-2xl">
-            $19 each, or $99 for the full bundle. sorted by priority score —
-            our take on what moves revenue first for a typical DTC stack.
+            $19 each, or $99 for the full library. sorted by priority score —
+            our take on what moves revenue first for a typical dtc stack. catalog
+            grows over time; library buyers get every future addition free.
           </p>
           <div className="mt-12 flex flex-wrap gap-4">
             <Link
               href="/pricing#bundle"
               className="font-mono-ui text-sm px-6 py-3 btn-primary transition-opacity"
             >
-              BUY BUNDLE — $99
+              GET THE LIBRARY — $99
             </Link>
             <Link
               href="/pricing"

@@ -39,7 +39,7 @@ export function SiteFooter() {
 
         <div className="mt-16 pt-8 border-t border-[var(--color-border)] flex flex-col sm:flex-row justify-between gap-4">
           <p className="font-mono-ui text-xs text-[var(--color-text-tertiary)]">
-            © 2026 SKILLOR // V1.0 // MIT
+            © 2026 SKILLOR // V1.0 // SKILLOR COMMERCIAL LICENSE
           </p>
           <p className="font-mono-ui text-xs text-[var(--color-text-tertiary)]">
             BUILT WITH NEXT.JS // DEPLOYED ON VERCEL

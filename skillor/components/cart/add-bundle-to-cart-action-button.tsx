@@ -8,7 +8,7 @@ import { BUNDLE_SLUG } from "@/lib/cart-pricing-calculator";
 
 export function AddBundleToCartActionButton({
   className = "",
-  label = "BUY BUNDLE — $99",
+  label = "GET THE LIBRARY — $99",
 }: {
   className?: string;
   label?: string;

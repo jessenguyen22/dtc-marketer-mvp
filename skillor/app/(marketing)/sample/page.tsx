@@ -65,7 +65,7 @@ export default function SamplePage() {
           skill against a synthetic DTC brand. inputs, slicing, ranked
           hypotheses, dollar-weighted fix list, and one explicit{" "}
           <span className="text-foreground">do-not-do</span>. this is the shape
-          of every skill in the bundle.
+          of every skill in the library.
         </p>
       </header>
 
@@ -93,19 +93,19 @@ export default function SamplePage() {
           <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-8 flex-wrap">
             <div className="flex-1">
               <p className="font-mono-ui text-xs text-[var(--color-text-tertiary)] mb-2">
-                THE BUNDLE — 24 SKILLS LIKE THIS
+                THE LIBRARY — EVERY SKILL AT THIS DEPTH
               </p>
               <p className="font-display text-5xl sm:text-6xl font-light">$99</p>
               <p className="text-sm text-[var(--color-text-secondary)] mt-3 max-w-md">
-                every skill in the pack ships at this depth. break-even at six.
-                one funnel audit at agency rates pays for the whole bundle.
+                every skill in the catalog ships at this depth. break-even at six.
+                one funnel audit at agency rates pays for the whole library.
               </p>
             </div>
             <Link
               href="/pricing#bundle"
               className="btn-primary font-mono-ui text-sm px-8 py-4 inline-block text-center w-full sm:w-auto"
             >
-              GET ALL 24 — $99
+              GET THE LIBRARY — $99
             </Link>
           </div>
         </div>

@@ -44,7 +44,7 @@ export function CheckoutCartSummaryAndForm() {
           {slugs.map((slug) => {
             const isBundle = slug === BUNDLE_SLUG;
             const label = isBundle
-              ? "skillor bundle — all 24 skills"
+              ? "skillor library — every skill in the catalog"
               : `skill: ${slug.replace(/-/g, " ")}`;
             const price = isBundle ? BUNDLE_PRICE_USD : SINGLE_SKILL_PRICE_USD;
             return (
@@ -121,7 +121,7 @@ function EmptyCartNotice() {
         CART EMPTY
       </p>
       <p className="text-[var(--color-text-secondary)]">
-        nothing in cart yet. start with the bundle, or pick individual skills.
+        nothing in cart yet. start with the library, or pick individual skills.
       </p>
       <div className="mt-8 flex flex-col sm:flex-row gap-3 justify-center">
         <Link
@@ -129,7 +129,7 @@ function EmptyCartNotice() {
           className="font-mono-ui text-sm px-6 py-3 btn-primary transition-opacity"
           style={{ opacity: 1 }}
         >
-          BUY BUNDLE — $99
+          GET THE LIBRARY — $99
         </Link>
         <Link
           href="/skills"
