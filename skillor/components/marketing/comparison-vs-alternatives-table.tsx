@@ -121,7 +121,7 @@ function CellTag({ cell }: { cell: Cell }) {
       >
         {cell.tag}
       </span>
-      <span className="font-mono text-xs text-[var(--color-text-secondary)] leading-relaxed">
+      <span className="font-mono text-xs text-[var(--color-text-secondary)] leading-relaxed break-words" style={{ overflowWrap: "anywhere" }}>
         {cell.text}
       </span>
     </div>
