@@ -3,10 +3,13 @@ import { PricingTierCards } from "@/components/marketing/pricing-tier-cards";
 import { FaqAccordionList } from "@/components/marketing/faq-accordion-list";
 import { RiskReversalGuaranteeBadge } from "@/components/marketing/risk-reversal-guarantee-badge";
 import { AnonymizedArchetypeQuoteGrid } from "@/components/marketing/anonymized-archetype-quote-card";
+import { StructuredDataScript } from "@/components/site/structured-data-script";
+import { buildFaqPageSchema } from "@/lib/structured-data-builders";
 
 export const metadata = {
   title: "pricing — skillor",
   description: pricingContent.hero.subheading,
+  alternates: { canonical: "/pricing" },
 };
 
 export default function PricingPage() {
@@ -14,6 +17,7 @@ export default function PricingPage() {
 
   return (
     <>
+      <StructuredDataScript data={buildFaqPageSchema(c.faq)} />
       <section className="w-full px-6 sm:px-8 pt-24 pb-12">
         <div className="max-w-[1100px] mx-auto">
           <h1

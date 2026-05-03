@@ -5,6 +5,8 @@ import {
   formatSkillName,
 } from "@/lib/skills-catalog-loader";
 import { SkillDetailPageRenderer } from "@/components/skills/skill-detail-page-renderer";
+import { StructuredDataScript } from "@/components/site/structured-data-script";
+import { buildSkillProductSchema } from "@/lib/structured-data-builders";
 
 // Next.js 16: params is a Promise — must await.
 type RouteParams = { params: Promise<{ slug: string }> };
@@ -24,9 +26,23 @@ export async function generateMetadata({ params }: RouteParams) {
   const skill = getSkillBySlug(normalizeSlug(slug));
   if (!skill) return { title: "skill not found — skillor" };
 
+  const title = `${formatSkillName(skill.name).toLowerCase()} — skillor`;
+  const canonical = `/skills/${skill.slug}`;
   return {
-    title: `${formatSkillName(skill.name).toLowerCase()} — skillor`,
+    title,
     description: skill.description,
+    alternates: { canonical },
+    openGraph: {
+      type: "website",
+      url: canonical,
+      title,
+      description: skill.description,
+    },
+    twitter: {
+      card: "summary_large_image" as const,
+      title,
+      description: skill.description,
+    },
   };
 }
 
@@ -44,6 +60,11 @@ export default async function SkillDetailPage({ params }: RouteParams) {
   const skill = getSkillBySlug(normalized);
   if (!skill) notFound();
 
-  return <SkillDetailPageRenderer skill={skill} />;
+  return (
+    <>
+      <StructuredDataScript data={buildSkillProductSchema(skill)} />
+      <SkillDetailPageRenderer skill={skill} />
+    </>
+  );
 }
 

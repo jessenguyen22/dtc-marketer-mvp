@@ -2,6 +2,9 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { LenisSmoothScrollProvider } from "@/components/site/lenis-smooth-scroll-provider";
+import { StructuredDataScript } from "@/components/site/structured-data-script";
+import { siteMeta } from "@/lib/site-meta-config";
+import { buildOrganizationSchema } from "@/lib/structured-data-builders";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -16,14 +19,38 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Skillor — DTC marketing skills, executable.",
-  description:
-    "24 production-grade marketing skills for DTC operators. $19 each, $99 for the full set. Buy once, run anywhere Claude runs.",
-  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? "https://skillor.app"),
+  metadataBase: new URL(siteMeta.url),
+  title: {
+    default: siteMeta.defaultTitle,
+    template: siteMeta.titleTemplate,
+  },
+  description: siteMeta.description,
+  alternates: { canonical: "/" },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: { index: true, follow: true },
+  },
   openGraph: {
-    title: "Skillor",
-    description: "24 production-grade marketing skills for DTC operators.",
     type: "website",
+    url: siteMeta.url,
+    siteName: siteMeta.name,
+    title: siteMeta.defaultTitle,
+    description: siteMeta.description,
+    images: [
+      {
+        url: siteMeta.ogImage,
+        width: siteMeta.ogImageWidth,
+        height: siteMeta.ogImageHeight,
+        alt: siteMeta.name,
+      },
+    ],
+  },
+  twitter: {
+    card: siteMeta.twitterCard,
+    title: siteMeta.defaultTitle,
+    description: siteMeta.description,
+    images: [siteMeta.ogImage],
   },
 };
 
@@ -42,6 +69,7 @@ export default function RootLayout({
         suppressHydrationWarning
       >
         <LenisSmoothScrollProvider />
+        <StructuredDataScript data={buildOrganizationSchema()} />
         {children}
       </body>
     </html>
