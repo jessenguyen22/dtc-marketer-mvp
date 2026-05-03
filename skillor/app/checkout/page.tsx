@@ -24,7 +24,7 @@ export default function CheckoutPage() {
 
         <h1
           className="font-display font-light tracking-tight mb-12"
-          style={{ fontSize: "clamp(40px, 7vw, 80px)", lineHeight: 1.05 }}
+          style={{ fontSize: "clamp(30px, 6vw, 72px)", lineHeight: 1.05 }}
         >
           checkout.
         </h1>

@@ -23,7 +23,7 @@ export default async function CheckoutSuccessPage({
 
         <h1
           className="mt-12 font-display font-light tracking-tight"
-          style={{ fontSize: "clamp(40px, 8vw, 100px)", lineHeight: 1.05 }}
+          style={{ fontSize: "clamp(32px, 7vw, 88px)", lineHeight: 1.05 }}
         >
           thank you.
         </h1>

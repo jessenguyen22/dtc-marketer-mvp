@@ -62,7 +62,7 @@ export function SkillDetailPageRenderer({ skill }: { skill: Skill }) {
 
       <h1
         className="font-display font-light tracking-tight lowercase"
-        style={{ fontSize: "clamp(40px, 7vw, 100px)", lineHeight: 1.05 }}
+        style={{ fontSize: "clamp(30px, 6vw, 80px)", lineHeight: 1.05 }}
       >
         {formatSkillName(skill.name).toLowerCase()}
       </h1>

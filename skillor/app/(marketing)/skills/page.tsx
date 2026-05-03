@@ -16,7 +16,7 @@ export default function SkillsCatalogPage() {
         <div className="max-w-[1200px] mx-auto">
           <h1
             className="font-display font-light tracking-tight"
-            style={{ fontSize: "clamp(48px, 10vw, 160px)", lineHeight: 1.05 }}
+            style={{ fontSize: "clamp(34px, 8vw, 120px)", lineHeight: 1.05 }}
           >
             24 skills.
           </h1>

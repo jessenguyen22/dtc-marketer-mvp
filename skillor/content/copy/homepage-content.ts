@@ -32,37 +32,37 @@ export const homepageContent = {
       "every skill is a system, not a prompt. opinionated process, scored output, paste-ready artifacts. examples ↓",
     cards: [
       {
-        slug: "shopify_pdp",
+        slug: "shopify-pdp",
         title: "shopify pdp",
         body: "founder pastes a shopify pdp url with 0.8% add-to-cart. skill returns a prioritized fix list (above-fold rewrite, 3 social-proof modules, 2 objection answers, sticky atc mobile) with copy ready to paste into theme.",
         tag: "PRIORITY 10",
       },
       {
-        slug: "ads_copy",
+        slug: "ads-copy",
         title: "ads copy",
         body: "brand needs 8 fresh meta ad concepts for a memorial day push. skill returns 8 distinct angles, 3 copy variants per angle with platform char limits, scored for compliance + brand voice + hook strength.",
         tag: "PRIORITY 10",
       },
       {
-        slug: "klaviyo_email",
+        slug: "klaviyo-email",
         title: "klaviyo email",
         body: "founder says 'our welcome flow is one email and converts 1.2%' — skill audits it and ships a 5-email rebuild ready to paste into klaviyo with subject lines, body copy, segmentation rules, send-time logic.",
         tag: "PRIORITY 10",
       },
       {
-        slug: "funnel_audit",
+        slug: "funnel-audit",
         title: "funnel audit",
         body: "founder asks 'where are we losing money?' — skill identifies the worst-vs-benchmark drop-off (e.g. atc → ic at 18% vs 32%), traces 3 likely causes, ranks fixes by expected revenue recovery.",
         tag: "PRIORITY 8",
       },
       {
-        slug: "wasted_ad_spend_finder",
+        slug: "wasted-ad-spend-finder",
         title: "wasted ad spend finder",
         body: "brand spends $120k/mo across meta + google. skill identifies $18k of fixable waste (dead campaigns, brand-search cannibalization, retargeting overlap with prospecting) with a 1-week action list.",
         tag: "PRIORITY 8",
       },
       {
-        slug: "retention_churn_flow",
+        slug: "retention-churn-flow",
         title: "retention + churn flow",
         body: "brand has $42 cac and 18% repeat rate at 90 days. skill identifies which cohorts churn earliest, builds an at-risk segment, designs a 4-touch win-back, recommends a replenishment trigger.",
         tag: "PRIORITY 9",
