@@ -11,6 +11,11 @@
 import { useRef } from "react";
 import { useGSAP } from "@gsap/react";
 import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+if (typeof window !== "undefined") {
+  gsap.registerPlugin(ScrollTrigger);
+}
 
 type Props = {
   children: React.ReactNode;
@@ -48,6 +53,20 @@ export function GsapSectionRevealOnScroll({
 
       if (targets.length === 0) return;
 
+      // Defensive: if the section is ALREADY in/past the viewport on mount
+      // (e.g. user lands via deep-link, or short pages where everything is
+      // visible), set elements to their final state immediately. Otherwise,
+      // animate them in on scroll.
+      const rootRect = root.getBoundingClientRect();
+      const viewportH = window.innerHeight || document.documentElement.clientHeight;
+      const alreadyVisible = rootRect.top < viewportH * 0.95;
+
+      if (alreadyVisible) {
+        // Already in view — just ensure visible. No animation needed.
+        gsap.set(targets, { opacity: 1, y: 0 });
+        return;
+      }
+
       gsap.from(targets, {
         opacity: 0,
         y,
@@ -57,8 +76,9 @@ export function GsapSectionRevealOnScroll({
         ease: "power3.out",
         scrollTrigger: {
           trigger: root,
-          start: "top 85%",
+          start: "top bottom-=80",
           once: true,
+          invalidateOnRefresh: true,
         },
       });
     },

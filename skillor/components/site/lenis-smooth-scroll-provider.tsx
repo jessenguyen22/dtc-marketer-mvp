@@ -32,7 +32,13 @@ export function LenisSmoothScrollProvider() {
     gsap.ticker.add(raf);
     gsap.ticker.lagSmoothing(0);
 
+    // After Lenis is wired into GSAP's ticker, force ScrollTrigger to
+    // recompute trigger positions. Without this, triggers registered before
+    // Lenis was ready can have stale positions and never fire.
+    const refreshId = window.setTimeout(() => ScrollTrigger.refresh(), 100);
+
     return () => {
+      window.clearTimeout(refreshId);
       gsap.ticker.remove(raf);
       lenis.destroy();
     };
