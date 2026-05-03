@@ -1,0 +1,142 @@
+@import "tailwindcss";
+
+/* ============================================================
+   SKILLOR — xAI dark brutalist tokens
+   Source of truth: ../../DESIGN.md
+   - Pure dark #1f2228 / pure white #ffffff
+   - 0px radius default, no shadows
+   - Geist Sans body / Geist Mono display + buttons
+   ============================================================ */
+
+@theme inline {
+  --color-background: #1f2228;
+  --color-foreground: #ffffff;
+
+  --color-border: rgba(255, 255, 255, 0.1);
+  --color-border-strong: rgba(255, 255, 255, 0.2);
+
+  --color-surface: rgba(255, 255, 255, 0.03);
+  --color-surface-hover: rgba(255, 255, 255, 0.08);
+
+  --color-text-secondary: rgba(255, 255, 255, 0.7);
+  --color-text-tertiary: rgba(255, 255, 255, 0.5);
+  --color-text-quaternary: rgba(255, 255, 255, 0.3);
+
+  --color-ring: rgba(59, 130, 246, 0.5);
+
+  --radius: 0px;
+  --radius-sm: 0px;
+  --radius-md: 0px;
+  --radius-lg: 0px;
+
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+/* All custom rules go in @layer base so Tailwind utilities (in the
+   utilities layer) ALWAYS win — fixes white-on-white button bug where
+   `a { color: inherit }` was overriding `.text-background` utility. */
+@layer base {
+  *,
+  *::before,
+  *::after {
+    box-shadow: none !important;
+  }
+
+  html {
+    background: #1f2228;
+    color: #ffffff;
+  }
+
+  body {
+    background: #1f2228;
+    color: #ffffff;
+    font-family: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+
+  ::selection {
+    background: #ffffff;
+    color: #1f2228;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-ring);
+    outline-offset: 2px;
+  }
+
+  /* Default link styling — utility classes will override per-element. */
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  input,
+  textarea,
+  select,
+  button {
+    font-family: inherit;
+    border-radius: 0;
+  }
+}
+
+/* These rules sit OUTSIDE any @layer so they have higher priority than
+   Tailwind utility classes — required because the buttons mix
+   `.btn-primary` with utility classes (px-*, py-*, transition-*) and we
+   want the brand background/foreground to always win. */
+
+.font-display {
+  font-family: var(--font-mono), ui-monospace, "SFMono-Regular", Menlo, monospace;
+  font-weight: 300;
+  letter-spacing: -0.01em;
+}
+
+.font-mono-ui {
+  font-family: var(--font-mono), ui-monospace, "SFMono-Regular", Menlo, monospace;
+  text-transform: uppercase;
+  letter-spacing: 0.1em; /* ~1.4px @ 14px */
+}
+
+/* Primary CTA — white-on-dark inverted. */
+.btn-primary,
+a.btn-primary,
+button.btn-primary {
+  background-color: #ffffff !important;
+  color: #1f2228 !important;
+  transition: opacity 150ms ease;
+}
+.btn-primary:hover {
+  opacity: 0.9;
+}
+
+/* Ghost / secondary — outlined, transparent fill. */
+.btn-ghost,
+a.btn-ghost,
+button.btn-ghost {
+  background-color: transparent !important;
+  color: #ffffff !important;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: background-color 150ms ease;
+}
+.btn-ghost:hover {
+  background-color: rgba(255, 255, 255, 0.05) !important;
+}
+
+/* Custom scrollbar — fits dark theme */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #1f2228;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.15);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
